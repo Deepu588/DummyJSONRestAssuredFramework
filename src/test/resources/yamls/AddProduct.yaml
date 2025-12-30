@@ -1,0 +1,20 @@
+name: AddProduct
+request:
+  method: POST
+  header: []
+  body:
+    mode: raw
+    raw: "{\r\n    \"title\":\"Apsara Pencil\"\r\n}"
+    options:
+      raw:
+        language: json
+  url:
+    raw: https://dummyjson.com/products/add
+    protocol: https
+    host:
+      - dummyjson
+      - com
+    path:
+      - products
+      - add
+response: []

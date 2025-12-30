@@ -1,0 +1,25 @@
+name: GetProductsByLimit
+event:
+  - listen: prerequest
+    script:
+      exec:
+        - "var number=Math.floor(Math.random()*10)\r"
+        - pm.variables.set("number1",number)
+      type: text/javascript
+      packages: {}
+      requests: {}
+request:
+  method: GET
+  header: []
+  url:
+    raw: https://dummyjson.com/products?limit={{number1}}
+    protocol: https
+    host:
+      - dummyjson
+      - com
+    path:
+      - products
+    query:
+      - key: limit
+        value: '{{number1}}'
+response: []

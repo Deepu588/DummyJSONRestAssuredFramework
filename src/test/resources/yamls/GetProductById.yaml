@@ -1,0 +1,30 @@
+name: GetProductById
+event:
+  - listen: prerequest
+    script:
+      exec:
+        - "var number=Math.floor(Math.random()*10)\r"
+        - pm.variables.set("number",number)
+      type: text/javascript
+      packages: {}
+      requests: {}
+request:
+  method: GET
+  header: []
+  url:
+    raw: https://dummyjson.com/products/:id
+    protocol: https
+    host:
+      - dummyjson
+      - com
+    path:
+      - products
+      - ':id'
+    query:
+      - key: ''
+        value: null
+        disabled: true
+    variable:
+      - key: id
+        value: '{{number}}'
+response: []

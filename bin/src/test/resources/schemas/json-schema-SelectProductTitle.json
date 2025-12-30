@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "",
+  "type": "object",
+  "properties": {
+    "products": {
+      "type": "array",
+      "uniqueItems": true,
+      "minItems": 1,
+      "items": {
+        "required": [
+          "id",
+          "title"
+        ],
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "number"
+    },
+    "skip": {
+      "type": "number"
+    },
+    "limit": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "products",
+    "total",
+    "skip",
+    "limit"
+  ]
+}

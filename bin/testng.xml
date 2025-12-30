@@ -1,0 +1,17 @@
+<suite name="DummyJSON Products Suite">
+    <listeners>
+        <listener class-name="edu.qts.utils.MyListeners"/>
+    </listeners>
+    <test thread-count="5" name="Test">
+        <classes>
+            <class name="edu.qts.tests.ProductTest1"></class>
+            <!--  <class name="com.qmg.tests.CommonTest"/>
+               <class name="com.qmg.tests.AuthTests"/>
+            <class name="com.qmg.tests.CompaniesTests"/>
+                <class name="com.qmg.tests.UsersTest"></class>
+                <class name="com.qmg.tests.StripeTests"></class> -->
+        </classes>
+    </test>
+    <!--  Test  -->
+</suite>
+        <!--  Suite  -->

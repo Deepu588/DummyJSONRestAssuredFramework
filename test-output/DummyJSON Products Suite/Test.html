@@ -1,0 +1,361 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>6/2/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Dec 16 12:23:46 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>5 seconds (5320 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='edu.qts.tests.ProductTest3.selectProductTitle()'><b>selectProductTitle</b><br>Test class: edu.qts.tests.ProductTest3</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: The content to match the given JSON schema.
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/0&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/1&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/2&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/3&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+
+  Actual: {&quot;products&quot;:[{&quot;id&quot;:1},{&quot;id&quot;:2},{&quot;id&quot;:3},{&quot;id&quot;:4}],&quot;total&quot;:194,&quot;skip&quot;:0,&quot;limit&quot;:4}
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at edu.qts.responsevalidation.ProductTest3ResponseValidation.validateSelectproductTitle(ProductTest3ResponseValidation.java:30)
+	at edu.qts.tests.ProductTest3.selectProductTitle(ProductTest3.java:31)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace491013714", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace491013714'><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: The content to match the given JSON schema.
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/0&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/1&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/2&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-SelectProductTitle.json#&quot;,&quot;pointer&quot;:&quot;/properties/products/items&quot;}
+    instance: {&quot;pointer&quot;:&quot;/products/3&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+
+  Actual: {&quot;products&quot;:[{&quot;id&quot;:1},{&quot;id&quot;:2},{&quot;id&quot;:3},{&quot;id&quot;:4}],&quot;total&quot;:194,&quot;skip&quot;:0,&quot;limit&quot;:4}
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at edu.qts.responsevalidation.ProductTest3ResponseValidation.validateSelectproductTitle(ProductTest3ResponseValidation.java:30)
+	at edu.qts.tests.ProductTest3.selectProductTitle(ProductTest3.java:31)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>edu.qts.tests.ProductTest3@bcec361</td></tr>
+<tr>
+<td title='edu.qts.tests.ProductTest2.addProduct()'><b>addProduct</b><br>Test class: edu.qts.tests.ProductTest2</td>
+<td><div><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: The content to match the given JSON schema.
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-AddProduct.json#&quot;,&quot;pointer&quot;:&quot;&quot;}
+    instance: {&quot;pointer&quot;:&quot;&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+
+  Actual: {&quot;id&quot;:195}
+
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at edu.qts.responsevalidation.ProductTest2ResponseValidation.validateAddProduct(ProductTest2ResponseValidation.java:20)
+	at edu.qts.tests.ProductTest2.addProduct(ProductTest2.java:21)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace622007642", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace622007642'><pre>java.lang.AssertionError: 1 expectation failed.
+Response body doesn&apos;t match expectation.
+Expected: The content to match the given JSON schema.
+error: object has missing required properties ([&quot;title&quot;])
+    level: &quot;error&quot;
+    schema: {&quot;loadingURI&quot;:&quot;file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-AddProduct.json#&quot;,&quot;pointer&quot;:&quot;&quot;}
+    instance: {&quot;pointer&quot;:&quot;&quot;}
+    domain: &quot;validation&quot;
+    keyword: &quot;required&quot;
+    required: [&quot;id&quot;,&quot;title&quot;]
+    missing: [&quot;title&quot;]
+
+  Actual: {&quot;id&quot;:195}
+
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:198)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:62)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:185)
+	at io.restassured.internal.ResponseSpecificationImpl.body(ResponseSpecificationImpl.groovy:107)
+	at io.restassured.internal.ValidatableResponseOptionsImpl.body(ValidatableResponseOptionsImpl.java:238)
+	at edu.qts.responsevalidation.ProductTest2ResponseValidation.validateAddProduct(ProductTest2ResponseValidation.java:20)
+	at edu.qts.tests.ProductTest2.addProduct(ProductTest2.java:21)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at org.testng.TestRunner.privateRun(TestRunner.java:739)
+	at org.testng.TestRunner.run(TestRunner.java:614)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>edu.qts.tests.ProductTest2@4e08711f</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='edu.qts.tests.ProductTest1.getProductCategories()'><b>getProductCategories</b><br>Test class: edu.qts.tests.ProductTest1</td>
+<td></td>
+<td>0</td>
+<td>edu.qts.tests.ProductTest1@7c6908d7</td></tr>
+<tr>
+<td title='edu.qts.tests.ProductTest2.deleteProductById()'><b>deleteProductById</b><br>Test class: edu.qts.tests.ProductTest2</td>
+<td></td>
+<td>0</td>
+<td>edu.qts.tests.ProductTest2@4e08711f</td></tr>
+<tr>
+<td title='edu.qts.tests.ProductTest2.updateProductById()'><b>updateProductById</b><br>Test class: edu.qts.tests.ProductTest2</td>
+<td></td>
+<td>0</td>
+<td>edu.qts.tests.ProductTest2@4e08711f</td></tr>
+<tr>
+<td title='edu.qts.tests.ProductTest3.selectProductPrice()'><b>selectProductPrice</b><br>Test class: edu.qts.tests.ProductTest3</td>
+<td></td>
+<td>0</td>
+<td>edu.qts.tests.ProductTest3@bcec361</td></tr>
+<tr>
+<td title='edu.qts.tests.ProductTest1.getProductById()'><b>getProductById</b><br>Test class: edu.qts.tests.ProductTest1</td>
+<td></td>
+<td>2</td>
+<td>edu.qts.tests.ProductTest1@7c6908d7</td></tr>
+<tr>
+<td title='edu.qts.tests.ProductTest3.getProductCategoriesList()'><b>getProductCategoriesList</b><br>Test class: edu.qts.tests.ProductTest3</td>
+<td></td>
+<td>0</td>
+<td>edu.qts.tests.ProductTest3@bcec361</td></tr>
+</table><p>
+</body>
+</html>

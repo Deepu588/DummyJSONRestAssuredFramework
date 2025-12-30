@@ -1,0 +1,11 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "description": "Categories list response",
+  "minItems": 1,
+  "uniqueItems": true,
+  "items": {
+    "type": "string",
+    "minLength": 1
+  }
+}

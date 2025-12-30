@@ -1,0 +1,138 @@
+====================================================================================================
+    🤖 REST ASSURED TEST FAILURE ANALYSIS REPORT WITH AI
+====================================================================================================
+Generated: 2025-12-02 12:52:03
+Total Failed Tests: 1
+Analysis Method: Batch AI Processing with Complete Context
+Tests with Request/Response: 0/1
+Tests with Schema Data: 0/1
+====================================================================================================
+
+📊 FAILURE SUMMARY
+--------------------------------------------------
+1. GetProductById [POST https://dummyjson.com/produ... -> 415] [2025-12-02 12:51:39]
+
+====================================================================================================
+
+🔍 FAILURE ANALYSIS #1
+--------------------------------------------------------------------------------
+Test Method: GetProductById
+Test Class: edu.qts.tests.ProductTest1
+Full Test Name: edu.qts.tests.ProductTest1.GetProductById
+Failure Time: 2025-12-02 12:51:39
+YAML File: GetProductById.yaml
+
+🌐 API CALL DETAILS
+----------------------------------------
+HTTP Method: POST
+Endpoint: https://dummyjson.com/products/5
+Actual Status Code: 415
+Response Time: 784 ms
+
+🤖 AI ANALYSIS:
+----------------------------------------
+🤖 GEMINI AI - DEEP ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1.GetProductById
+   :Root Cause: The test incorrectly uses the `POST` HTTP method to retrieve a resource and sends a `Content-Type` header with an unsupported charset, when a `GET` request with no body is the correct approach.
+📋 Header Issues: The `Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1` header is incorrect. Firstly, a `GET` request (implied by the test name) should not have a `Content-Type` header. Secondly, the server explicitly rejected the `ISO-8859-1` charset, leading to the 415 error.
+
+❓ Query Parameter Issues: None
+
+🛣️  Path Parameter Issues: None
+
+📤 Request Body Issues: A request body was sent (implied by the `Content-Type` header) for an operation that should be a `GET` request, which conventionally has no body.
+
+📥 Response Body Issues: The actual response is an error object `{"message":"unsupported charset \"ISO-8859-1\""}`, which does not match the expected JSON schema for a product.
+
+⚠️  Schema Violations: The request violates the fundamental REST principle of using the `GET` verb for idempotent resource retrieval. The response does not match the expected product data schema due to the request failure.
+📊 Status Code Analysis: The actual status code `415 Unsupported Media Type` was returned because the server does not support the `charset=ISO-8859-1` specified in the `Content-Type` header. The expected `200 OK` was never achieved because the request was rejected at the transport layer before the application logic could be processed.
+
+🔧 Exact Fix:
+   • Change the HTTP method from `POST` to `GET`.
+   • Remove the `Content-Type` header entirely from the request.
+   • Ensure the expected status code in the test assertion is `200`.
+📍 Fix Location: In the test case definition for `TEST_1: GetProductById`, where the HTTP client request is built and executed.
+
+🛡️  Prevention: Implement static analysis or code reviews for test automation scripts to enforce the correct usage of HTTP verbs for standard RESTful operations (GET for retrieve, POST for create, etc.). Additionally, use a shared HTTP client configuration that defaults to standard charsets like UTF-8 to prevent encoding issues.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+📤 REQUEST DATA SENT
+----------------------------------------
+Headers:
+  Accept: */*
+  Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
+  
+
+📥 RESPONSE DATA RECEIVED
+----------------------------------------
+Headers:
+  Date: Tue, 02 Dec 2025 07:21:39 GMT
+  Content-Type: application/json; charset=utf-8
+  Content-Length: 48
+  Connection: keep-alive
+  Server: cloudflare
+  x-ratelimit-limit: 100
+  x-ratelimit-remaining: 99
+  x-ratelimit-reset: 1764660103
+  x-dns-prefetch-control: off
+  x-frame-options: SAMEORIGIN
+  strict-transport-security: max-age=15552000; includeSubDomains
+  x-download-options: noopen
+  x-content-type-options: nosniff
+  x-xss-protection: 1; mode=block
+  access-control-allow-origin: *
+  etag: W/"30-e/zkGaJp54mPEAwa53jOZKwiBWg"
+  vary: Accept-Encoding
+  cf-cache-status: DYNAMIC
+  Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=MbfUzpx6P6kVaWOioyqGzcHW4ctdvnA3on4%2FV3KuUQyn1BPsdmw5mXJAH3LntEqEAorYJuSMHx1Cp%2BAKn6tERHqCB30hTRXZfwvD"}]}
+  CF-RAY: 9a791193ba7fa8fb-MAA
+  
+Body:
+  {
+    "message" : "unsupported charset \"ISO-8859-1\""
+  }
+
+❌ ERROR DETAILS:
+----------------------------------------
+1 expectation failed.
+Expected status code <200> but was <415>.
+
+📋 STACK TRACE (First 20 lines):
+----------------------------------------
+java.lang.AssertionError: 1 expectation failed.
+Expected status code <200> but was <415>.
+
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at org.codehaus.groovy.reflection.CachedConstructor.invoke(CachedConstructor.java:73)
+	at org.codehaus.groovy.runtime.callsite.ConstructorSite$ConstructorSiteNoUnwrapNoCoerce.callConstructor(ConstructorSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallConstructor(CallSiteArray.java:57)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:263)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callConstructor(AbstractCallSite.java:277)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure.validate(ResponseSpecificationImpl.groovy:512)
+	at io.restassured.internal.ResponseSpecificationImpl$HamcrestAssertionClosure$validate$1.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:45)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:696)
+	at io.restassured.internal.ResponseSpecificationImpl.this$2$validateResponseIfRequired(ResponseSpecificationImpl.groovy)
+... (truncated - see logs for full stack trace)
+
+====================================================================================================
+
+📋 REPORT FOOTER
+--------------------------------------------------
+This comprehensive report was generated using AI-powered test failure analysis.
+Analysis includes: Request/Response data, YAML schemas, and AI insights.
+For questions or issues, please contact the QA automation team.
+Report generated at: 2025-12-02 12:52:03
+====================================================================================================

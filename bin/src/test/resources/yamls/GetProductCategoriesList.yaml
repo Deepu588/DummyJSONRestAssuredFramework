@@ -1,0 +1,14 @@
+name: GetProductCategoriesList
+request:
+  method: GET
+  header: []
+  url:
+    raw: https://dummyjson.com/products/category-list
+    protocol: https
+    host:
+      - dummyjson
+      - com
+    path:
+      - products
+      - category-list
+response: []

@@ -1,0 +1,61 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Schema for UpdateProductById response",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "price": {
+      "type": "number"
+    },
+    "discountPercentage": {
+      "type": "number"
+    },
+    "stock": {
+      "type": "number"
+    },
+    "rating": {
+      "type": "number"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "thumbnail": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1
+    },
+    "brand": {
+      "type": "string",
+      "minLength": 1
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "id",
+    "title",
+    "price",
+    "discountPercentage",
+    "stock",
+    "rating",
+    "images",
+    "thumbnail",
+    "description",
+    "brand",
+    "category"
+  ]
+}

@@ -1,0 +1,26 @@
+name: DeleteProductById
+event:
+  - listen: prerequest
+    script:
+      exec:
+        - "var number=Math.floor(Math.random()*10)\r"
+        - pm.variables.set("number3",number)
+      type: text/javascript
+      packages: {}
+      requests: {}
+request:
+  method: DELETE
+  header: []
+  url:
+    raw: https://dummyjson.com/products/:id
+    protocol: https
+    host:
+      - dummyjson
+      - com
+    path:
+      - products
+      - ':id'
+    variable:
+      - key: id
+        value: '{{number3}}'
+response: []

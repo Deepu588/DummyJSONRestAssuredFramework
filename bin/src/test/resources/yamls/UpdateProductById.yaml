@@ -1,0 +1,32 @@
+name: UpdateProductById
+event:
+  - listen: prerequest
+    script:
+      exec:
+        - "var number=Math.floor(Math.random()*10)\r"
+        - pm.variables.set("number5",number)
+      type: text/javascript
+      packages: {}
+      requests: {}
+request:
+  method: PUT
+  header: []
+  body:
+    mode: raw
+    raw: "{\r\n \"title\":\"powder\"   \r\n}"
+    options:
+      raw:
+        language: json
+  url:
+    raw: https://dummyjson.com/products/:id
+    protocol: https
+    host:
+      - dummyjson
+      - com
+    path:
+      - products
+      - ':id'
+    variable:
+      - key: id
+        value: '{{number5}}'
+response: []

@@ -1,0 +1,206 @@
+====================================================================================================
+    🤖 REST ASSURED TEST FAILURE ANALYSIS REPORT WITH AI
+====================================================================================================
+Generated: 2025-12-02 13:52:55
+Total Failed Tests: 1
+Analysis Method: Batch AI Processing with Complete Context
+Tests with Request/Response: 0/1
+Tests with Schema Data: 0/1
+====================================================================================================
+
+📊 FAILURE SUMMARY
+--------------------------------------------------
+1. GetProductById [GET https://dummyjson.com/produ... -> 200] [2025-12-02 13:52:38]
+
+====================================================================================================
+
+🔍 FAILURE ANALYSIS #1
+--------------------------------------------------------------------------------
+Test Method: GetProductById
+Test Class: edu.qts.tests.ProductTest1
+Full Test Name: edu.qts.tests.ProductTest1.GetProductById
+Failure Time: 2025-12-02 13:52:38
+YAML File: GetProductById.yaml
+
+🌐 API CALL DETAILS
+----------------------------------------
+HTTP Method: GET
+Endpoint: https://dummyjson.com/products/5
+Actual Status Code: 200
+Response Time: 1253 ms
+
+🤖 AI ANALYSIS:
+----------------------------------------
+🤖 GEMINI AI - DEEP ANALYSIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+   1.GetProductById
+   :Root Cause: The test failed because the JSON Schema file (`json-schema-GetProductById.json`) used to validate the API response is syntactically invalid, preventing the validation from even starting.
+📋 Header Issues: None
+
+❓ Query Parameter Issues: None
+
+🛣️  Path Parameter Issues: None
+
+📤 Request Body Issues: None
+
+📥 Response Body Issues: The test framework could not compare the actual response to the schema because the schema itself failed to load. The API returned a valid JSON payload.
+
+⚠️  Schema Violations: The error `invalid JSON Schema... array must have at least one element` indicates that a keyword in the schema file (like `required` or `enum`) is defined with an empty array `[]`, which is not allowed by the JSON Schema specification.
+📊 Status Code Analysis: The test failed during the schema loading phase, before it could check the status code. The `Expected=null` likely indicates a default value, while the `Actual=200` is the correct and expected status for a successful GET request. The status code itself is not the cause of the failure.
+
+🔧 Exact Fix:
+   • Open the schema file: `json-schema-GetProductById.json`.
+   • Search for any property that has an empty array as its value, for example: `"required": []`.
+   • Remove the entire line or property (e.g., remove the `"required": []` key-value pair). If no properties are required for an object, the `required` keyword should be omitted, not left as an empty array.
+📍 Fix Location: The JSON Schema file: `schemas/json-schema-GetProductById.json`.
+
+🛡️  Prevention: Implement a pre-commit hook or a CI pipeline step that validates all JSON Schema files against the meta-schema. This ensures that syntactically incorrect schemas are caught before they are merged and cause test failures.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+
+
+📤 REQUEST DATA SENT
+----------------------------------------
+Headers:
+  Accept: */*
+  
+
+📥 RESPONSE DATA RECEIVED
+----------------------------------------
+Headers:
+  Date: Tue, 02 Dec 2025 08:22:37 GMT
+  Content-Type: application/json; charset=utf-8
+  Transfer-Encoding: chunked
+  Connection: keep-alive
+  Server: cloudflare
+  x-ratelimit-limit: 100
+  x-ratelimit-remaining: 99
+  x-ratelimit-reset: 1764663763
+  x-dns-prefetch-control: off
+  x-frame-options: SAMEORIGIN
+  strict-transport-security: max-age=15552000; includeSubDomains
+  x-download-options: noopen
+  x-content-type-options: nosniff
+  x-xss-protection: 1; mode=block
+  access-control-allow-origin: *
+  etag: W/"5a0-ZsnaKl/vlj79H+5kfeS/7ZcH6is"
+  vary: Accept-Encoding
+  Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=OW2Wnx5KqwN9%2BqnHp%2F5Y6nDQpldC3CstKLL1BEpL06nQVXMgMNcgF9jFliOZcsKexmxZEtg3pyOCBrcM6QrQ9LQhPoNSst6DJEBG"}]}
+  cf-cache-status: DYNAMIC
+  Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+  Content-Encoding: gzip
+  CF-RAY: 9a796ae02dfc2e9c-HYD
+  
+Body:
+  {
+    "id" : 5,
+    "title" : "Red Nail Polish",
+    "description" : "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
+    "category" : "beauty",
+    "price" : 8.99,
+    "discountPercentage" : 11.44,
+    "rating" : 4.32,
+    "stock" : 79,
+    "tags" : [ "beauty", "nail polish" ],
+    "brand" : "Nail Couture",
+    "sku" : "BEA-NAI-NAI-005",
+    "weight" : 8,
+    "dimensions" : {
+      "width" : 21.63,
+      "height" : 16.48,
+      "depth" : 29.84
+    },
+    "warrantyInformation" : "1 month warranty",
+    "shippingInformation" : "Ships overnight",
+    "availabilityStatus" : "In Stock",
+    "reviews" : [ {
+      "rating" : 2,
+      "comment" : "Poor quality!",
+      "date" : "2025-04-30T09:41:02.053Z",
+      "reviewerName" : "Benjamin Wilson",
+      "reviewerEmail" : "benjamin.wilson@x.dummyjson.com"
+    }, {
+      "rating" : 5,
+      "comment" : "Great product!",
+      "date" : "2025-04-30T09:41:02.053Z",
+      "reviewerName" : "Liam Smith",
+      "reviewerEmail" : "liam.smith@x.dummyjson.com"
+    }, {
+      "rating" : 1,
+      "comment" : "Very unhappy with my purchase!",
+      "date" : "2025-04-30T09:41:02.053Z",
+      "reviewerName" : "Clara Berry",
+      "reviewerEmail" : "clara.berry@x.dummyjson.com"
+    } ],
+    "returnPolicy" : "No return policy",
+    "minimumOrderQuantity" : 22,
+    "meta" : {
+      "createdAt" : "2025-04-30T09:41:02.053Z",
+      "updatedAt" : "2025-04-30T09:41:02.053Z",
+      "barcode" : "4063010628104",
+      "qrCode" : "https://cdn.dummyjson.com/public/qr-code.png"
+    },
+    "images" : [ "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/1.webp" ],
+    "thumbnail" : "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp"
+  }
+
+❌ ERROR DETAILS:
+----------------------------------------
+com.github.fge.jsonschema.core.exceptions.InvalidSchemaException: fatal: invalid JSON Schema, cannot continue
+Syntax errors:
+[ {
+  "level" : "error",
+  "message" : "array must have at least one element",
+  "domain" : "syntax",
+  "schema" : {
+    "loadingURI" : "file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-GetProductById.json#",
+    "pointer" : "/properties/images/items"
+  },
+  "keyword" : "required"
+}, {
+  "level" : "error",
+  "message" : "array must have at least one element",
+  "domain" : "syntax",
+  "schema" : {
+    "loadingURI" : "file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-GetProductById.json#",
+    "pointer" : "/properties/tags/items"
+  },
+  "keyword" : "required"
+} ]
+    level: "fatal"
+
+📋 STACK TRACE (First 20 lines):
+----------------------------------------
+io.restassured.module.jsv.JsonSchemaValidationException: com.github.fge.jsonschema.core.exceptions.InvalidSchemaException: fatal: invalid JSON Schema, cannot continue
+Syntax errors:
+[ {
+  "level" : "error",
+  "message" : "array must have at least one element",
+  "domain" : "syntax",
+  "schema" : {
+    "loadingURI" : "file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-GetProductById.json#",
+    "pointer" : "/properties/images/items"
+  },
+  "keyword" : "required"
+}, {
+  "level" : "error",
+  "message" : "array must have at least one element",
+  "domain" : "syntax",
+  "schema" : {
+    "loadingURI" : "file:/D:/DummyJSONWithAIApproaches/DummyJSONAPIS/target/test-classes/schemas/json-schema-GetProductById.json#",
+    "pointer" : "/properties/tags/items"
+  },
+  "keyword" : "required"
+... (truncated - see logs for full stack trace)
+
+====================================================================================================
+
+📋 REPORT FOOTER
+--------------------------------------------------
+This comprehensive report was generated using AI-powered test failure analysis.
+Analysis includes: Request/Response data, YAML schemas, and AI insights.
+For questions or issues, please contact the QA automation team.
+Report generated at: 2025-12-02 13:52:55
+====================================================================================================
